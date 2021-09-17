@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Seoul</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">Seoul</a>
+      <div class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Content</a>
+        <a href="#">FAQ</a>
+      </div>
+    </header>
+    <main class="home">
+      <div class="content">
+        <h2>Capital of <span>Korea</span></h2>
+        <p>
+          Seoul has been the capital of South Korea for 600 years. The
+          population is about 10.5 million people. We add special city next to
+          Seoul when we write the name in Korean. Seoul was host city of the `88
+          Olympics. And it was once a city for kings, but now the capital has
+          become the hub of the entire nation. Seoul has many hundreds of to do
+          and see. These include well preserved ancient royal palaces, temples,
+          tombs, museums, art galleries, etc.
+        </p>
+      </div>
+      <div class="general"></div>
+      <div class="city"></div>
+    </main>
+    <main class="text">
+      <p>
+        Seoul, officially the Seoul Special City, is the capital and largest
+        metropolis of South Korea. Seoul has a population of 9.7 million people,
+        and forms the heart of the Seoul Capital Area with the surrounding
+        Incheon metropolis and Gyeonggi province. Considered to be a global
+        city, Seoul was the world's 4th largest metropolitan economy in 2014
+        after Tokyo, New York City and Los Angeles. In 2017, the cost of living
+        in Seoul was ranked the 6th highest globally.
+      </p>
+      <br />
+      <p>
+        With major technology hubs centered in Gangnam and Digital Media City,
+        the Seoul Capital Area is home to the headquarters of 14 Fortune Global
+        500 companies, including Samsung, LG, and Hyundai. The metropolis exerts
+        a major influence in global affairs as one of the five leading hosts of
+        global conferences. Seoul has hosted the 1986 Asian Games, 1988 Summer
+        Olympics, and the 2010 G-20 Seoul summit.
+      </p>
+      <br />
+      <p>
+        Seoul was the capital of various Korean states, including Baekje,
+        Joseon, the Korean Empire, Goryeo, and presently South Korea.
+        Strategically located along the Han River, Seoul's history stretches
+        back over two thousand years, when it was founded in 18 BC by the people
+        of Baekje, one of the Three Kingdoms of Korea. The city was later
+        designated the capital of Korea under the Joseon dynasty. Seoul is
+        surrounded by a mountainous and hilly landscape, with Bukhan Mountain
+        located on the northern edge of the city. The Seoul Capital Area
+        contains five UNESCO World Heritage Sites: Changdeok Palace, Hwaseong
+        Fortress, Jogmyo Shrine, Namhansanseong and the Royal Tombs of the
+        Joseon Dynasty.
+      </p>
+    </main>
+  </body>
+  <script>
+    const general = document.querySelector(".general");
+    const city = document.querySelector(".city");
+
+    const controlImg = () => {
+      if (window.scrollY > 40) {
+        general.style.transform =
+          "translateX(" + -0.25 * window.scrollY + "px)";
+        city.style.transform = "translateX(" + 0.25 * window.scrollY + "px)";
+      }
+    };
+
+    window.addEventListener("scroll", () => {
+      controlImg();
+    });
+
+    const loadHome = () => {
+      general.style.transform = "translateX(-700px)";
+    };
+
+    window.addEventListener("load", () => {
+      loadHome();
+    });
+  </script>
+</html>

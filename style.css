@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+header {
+  width: 100%;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 200px;
+}
+
+header .brand {
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #5b57aa, #ac8eba);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+header .navigation a {
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 10px 20px;
+  transition: 0.3s ease;
+}
+
+header .navigation a:hover {
+  color: #2f5296;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 5px 25px 10px #3e5aa5;
+}
+
+.home {
+  z-index: 888;
+  position: relative;
+  padding: 150px 200px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: url(pictures/background.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.home::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top, rgb(186, 150, 188), transparent);
+}
+
+.home .content {
+  width: 75%;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 4em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ba96bc;
+}
+
+.content h2 span {
+  font-family: "Zilla Slab", serif;
+  font-size: 1.1em;
+  font-weight: 900;
+  background: radial-gradient(blue, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.content p {
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 150%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+}
+
+.home .general {
+  position: absolute;
+  bottom: 0;
+  background: url("pictures/general.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 500px;
+  height: 500px;
+  transform: translateX(-1000px);
+  transition: 0.3 ease;
+  transition-property: all;
+}
+
+.home .city {
+  position: absolute;
+  right: -150px;
+  bottom: -213px;
+  background: url("pictures/city.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 600px;
+  height: 600px;
+}
+
+.text {
+  background: rgb(186, 150, 188);
+  padding: 50px 200px;
+}
+
+.text p {
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 150%;
+}

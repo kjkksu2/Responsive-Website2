@@ -3,16 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <title>Seoul</title>
   </head>
   <body>
     <header>
       <a href="#" class="brand">Seoul</a>
       <div class="navigation">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Content</a>
-        <a href="#">FAQ</a>
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Content</a>
+          <a href="#">FAQ</a>
+        </div>
       </div>
     </header>
     <main class="home">
@@ -31,7 +37,7 @@
       <div class="general"></div>
       <div class="city"></div>
     </main>
-    <main class="text">
+    <div class="text">
       <p>
         Seoul, officially the Seoul Special City, is the capital and largest
         metropolis of South Korea. Seoul has a population of 9.7 million people,
@@ -64,26 +70,47 @@
         Fortress, Jogmyo Shrine, Namhansanseong and the Royal Tombs of the
         Joseon Dynasty.
       </p>
-    </main>
+    </div>
   </body>
   <script>
     const general = document.querySelector(".general");
     const city = document.querySelector(".city");
+    const content = document.querySelector(".content");
+    const header = document.querySelector("header");
 
-    const controlImg = () => {
-      if (window.scrollY > 40) {
-        general.style.transform =
-          "translateX(" + -0.25 * window.scrollY + "px)";
-        city.style.transform = "translateX(" + 0.25 * window.scrollY + "px)";
+    // Control Image && Control Content
+    const controlScroll = () => {
+      const scrollVal = window.scrollY;
+
+      // Image
+      if (scrollVal > 40) {
+        general.style.transform = "translateX(" + -0.25 * scrollVal + "px)";
+        city.style.transform = "translateX(" + 0.25 * scrollVal + "px)";
+      }
+
+      // Content
+      content.style.marginTop = 0.5 * scrollVal + "px";
+      content.style.transitionDelay = "0s";
+
+      if (document.documentElement.scrollTop > 400) {
+        // return html scollTop
+        content.style.opacity = "0";
+      } else {
+        content.style.opacity = "1";
       }
     };
 
     window.addEventListener("scroll", () => {
-      controlImg();
+      controlScroll();
     });
 
+    // Load Home
     const loadHome = () => {
-      general.style.transform = "translateX(-700px)";
+      general.style.left = "-200px";
+      city.style.right = "-100px";
+      content.style.transform = "translateY(0px)";
+      content.style.opacity = "1";
+      header.style.transform = "translateY(0px)";
     };
 
     window.addEventListener("load", () => {
